@@ -20,4 +20,8 @@ export const menus =[
         id: "5",
         menuname: "바로펀딩",
     },
+    {
+        id: "6",
+        menuname: "테스트",
+    },
 ]
