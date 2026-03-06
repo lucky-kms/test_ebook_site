@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="450" height="210" viewBox="60 0 450 210" role="img" aria-label="ebook forest logo (cropped)">
+  <defs>
+    <linearGradient id="forestGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2e7d32"></stop>
+      <stop offset="100%" stop-color="#1b5e20"></stop>
+    </linearGradient>
+    <style>
+      .dark { fill:#1b5e20 }
+      .mid { fill:#2e7d32 }
+      .light { fill:#81c784 }
+      .textMain { fill:#1b5e20 }
+      .textSub { fill:#2e7d32 }
+    </style>
+  </defs>
+
+  <!-- Icon -->
+  <g transform="translate(40,30)">
+    <!-- Book Base -->
+    <path fill="url(#forestGrad)" d="M38 20c18-8 44-8 62 0v144c-18-8-44-8-62 0V20z"></path>
+    <path class="mid" d="M102 20c18-8 44-8 62 0v144c-18-8-44-8-62 0V20z"></path>
+    <rect x="98" y="22" width="6" height="140" rx="3" class="light"></rect>
+
+    <!-- Trees -->
+    <g transform="translate(18,-8)">
+      <path class="dark" d="M60 60l22-34 22 34h-10l16 24H44l16-24h0z"></path>
+      <rect x="80" y="84" width="4" height="16" class="dark"></rect>
+      <path class="mid" d="M108 66l16-26 16 26h-8l12 18H96l12-18h0z"></path>
+      <rect x="122" y="84" width="4" height="14" class="mid"></rect>
+    </g>
+  </g>
+
+  <!-- Wordmark -->
+  <g transform="translate(260,72)">
+    <text x="0" y="0" font-family="Inter, Pretendard, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="64" font-weight="800" class="textMain" letter-spacing="-1">
+      ebook
+    </text>
+
+    <text x="0" y="68" font-family="Inter, Pretendard, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="64" font-weight="800" class="textSub" letter-spacing="-1">
+      forest
+    </text>
+
+    <rect x="0" y="88" width="230" height="8" rx="4" class="light"></rect>
+  </g>
+</svg>

@@ -1,0 +1,150 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* common */
+/* 1) box-sizing 통일 */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* 2) 기본 여백 제거 */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+/* 3) 퍼블리싱/레이아웃 기준 높이 */
+html, body, #root {
+    height: 100%;
+}
+
+/* 4) 기본 폰트/렌더링 */
+body {
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", Arial, sans-serif;
+    line-height: 1.4;
+}
+
+/* 5) 이미지/버튼 기본 */
+img, svg, video {
+    max-width: 100%;
+    display: block;
+}
+button, input, textarea {
+    font: inherit;
+}
+
+a {
+	color: #111;
+}
+
+#root {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.blind {
+	display: inline-block;
+	position: relative;
+	text-overflow:clip;
+}
+
+.blind span {
+	position: absolute;
+	top: -999px;
+	left: -999px;
+}
+
+/********** select ***********/
+.select-root { position: relative; display: inline-block; }
+.select-trigger {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 10px;
+  width: 220px;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: white;
+  cursor: pointer;
+}
+
+.select-value.is-placeholder { opacity: 0.6; }
+.select-arrow { opacity: 0.7; }
+
+.select-popover {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  overflow: hidden;
+  z-index: 20;
+}
+
+.select-search { padding: 10px; border-bottom: 1px solid #eee; }
+.select-search input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.select-list { max-height: 240px; overflow: auto; padding: 6px; margin: 0; list-style: none; }
+.select-item {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.select-item.is-active { background: #f3f4f6; }
+.select-item.is-selected { font-weight: 600; }
+.select-empty { padding: 14px 10px; opacity: 0.7; }
+.select-check { opacity: 0.8; }
+
+.select-root.is-disabled .select-trigger {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

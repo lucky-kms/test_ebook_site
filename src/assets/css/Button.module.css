@@ -1,0 +1,44 @@
+
+
+/* Common Button design */
+.btn {
+    width: auto;
+    height: 32px;
+    color: #000;
+    text-align:center;
+    font-size: inherit;
+    font-weight: bold;
+    padding: 0 20px;
+    border:0px solid transparent;
+    border-radius: 16px;
+}
+
+.w100 {
+    width:100%;
+}
+
+.btn_md {
+    height: 38px;
+    line-height: 38px;
+}
+
+.btn_lg {
+    height: 43px;
+    line-height: 43px;
+}
+
+.text_white {
+    color: #fff;
+}
+
+.bg_white {
+    background-color: #fff;
+}
+
+.text_dark0 {
+    color: #000;
+}
+
+.bg_black {
+    background-color: #000;
+}

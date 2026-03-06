@@ -1,0 +1,27 @@
+
+/* 카드박스 디자인 */
+
+.card_box {
+    width: 100%;
+    border-radius: 16px;
+    padding: 26px;
+    color: #111;
+    background-color: #fff;
+}
+
+.card_box > span + *{
+    margin-top:30px;
+    margin-bottom: 15px;
+}
+
+.title_h2 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #111;
+}
+
+.title_sub {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
