@@ -19,5 +19,5 @@ e-book 도서 대여 및 구매 시스템 사이트 프로젝트 입니다.
 - 모바일 반응형
 
 # 기술
-React, style-components, 
+React, Router, style-components, 
 props, state, 이벤트연결, 컴포넌트 구조
