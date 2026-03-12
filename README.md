@@ -18,6 +18,6 @@ e-book 도서 대여 및 구매 시스템 사이트 프로젝트 입니다.
 - 장바구니
 - 모바일 반응형
 
-# 기술
+# Tech
 React, Router, style-components, 
 props, state, 이벤트연결, 리스트 랜더링, 컴포넌트 구조
