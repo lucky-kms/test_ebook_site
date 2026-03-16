@@ -1,5 +1,5 @@
-import React, { useState, useMemo } from "react";
-import { Link, Routes, Route } from 'react-router-dom';
+import React, { useState, useMemo, useRef, useEffect } from "react";
+import { Link, useOutletContext,  } from 'react-router-dom';
 
 // 컴포넌트
 import ButtonBg from '../components/ButtonBg';
@@ -77,6 +77,47 @@ const columns = [
 
 // function
 const Main = () => {
+    const { setActiveTarget } = useOutletContext();
+
+    const bestRef = useRef(null);
+    const newRef = useRef(null);
+    const eventRef = useRef(null);
+    const payRef = useRef(null);
+    const fundingRef = useRef(null);
+
+    useEffect(() => {
+        const sections = [
+            bestRef.current, 
+            newRef.current, 
+            eventRef.current, 
+            payRef.current, 
+            fundingRef.current, 
+        ].filter(Boolean);
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                const visibleEntry = entries
+                .filter((entry) => entry.isIntersecting)
+                .sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+                if(visibleEntry?.target?.id) {
+                    setActiveTarget(visibleEntry.target.id);
+                }
+            },
+            {
+                root: null,
+                rootMargin: "-20% 0px -60% 0px",
+                threshold: [0.2, 0.4, 0.6],
+            }
+        );
+
+        sections.forEach((section) => observer.observe(section));
+
+        return () => {
+            sections.forEach((section) => observer.unobserve(section));
+            observer.disconnect();
+        };
+    }, [setActiveTarget])
 
     const styleCustom = {
         textAlign: "center"
@@ -111,7 +152,7 @@ const Main = () => {
         <>
             <Wrap>
             
-                <Section>
+                <Section id="best_book" ref={bestRef}>
                     <div className="inner">
                         <div style={{position: "relative", zIndex:10,}}>
                             <TitleH2>안녕하세요 E-BOOK 도서 대여 오신것을 환영합니다.</TitleH2>
@@ -182,11 +223,15 @@ const Main = () => {
                     </div>
                 </Section> 
 
-                <Section style={{height:"700px", backgroundColor: "tomato"}}>
+                <Section id="new_book" ref={newRef}
+                    style={{height:"700px", }}>
+                    <TitleH2>신상품</TitleH2>
                     <p style={{color: "#111", minHeight: "100px", paddingBottom:"50px", fontSize: "26px",}}>{/* 스아이프 연결 , 협찬사 로고 흐르는 텍스트 */ }</p>
                 </Section>
 
-                <Section style={{height:"700px", backgroundColor: "yellow"}}>
+                <Section id="event_book" ref={eventRef} 
+                    style={{height:"700px", }}>
+                    <TitleH2>이벤트</TitleH2>
 
                     <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
                             <Select
@@ -210,10 +255,14 @@ const Main = () => {
                         
                 </Section>
 
-                <Section style={{height:"700px", backgroundColor: "blue"}}>
+                <Section id="pay" ref={payRef} 
+                    style={{height:"700px",}}>
+                    <TitleH2>Pay</TitleH2>
                 </Section>
 
-                <Section style={{height:"700px", backgroundColor: "gray"}}>
+                <Section id="straight_funding" ref={fundingRef}
+                    style={{height:"700px", }}>
+                    <TitleH2>바로펀딩</TitleH2>
                 </Section>
             </Wrap>
         </>

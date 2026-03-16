@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Menu from "./Menu";
 
 
-const MenuList = ({menus}) => {
+const Gnb = ({menus, activeTarget, scrollToSection}) => {
 
     return (
         <MenuWrap>
@@ -20,7 +20,12 @@ const MenuList = ({menus}) => {
                 <MenuListUl>
                     {
                         menus.map(menu => (
-                            <Menu key={menu.id} menu={menu} />
+                            <Menu 
+                                key={menu.id} 
+                                menu={menu}
+                                active={activeTarget === menu.scrollTarget}
+                                scrollToSection={scrollToSection}
+                            />
                         ))
                     }
                 </MenuListUl>
@@ -28,8 +33,8 @@ const MenuList = ({menus}) => {
                 {/* 로그인 */}
                 <JoinWrap>
                     <div className="inner">
-                        <Link class="memberjoin"><span>회원가입</span></Link>
-                        <Link class="login"><span>로그인</span></Link>
+                        <Link class="memberjoin" to="join"><span>회원가입</span></Link>
+                        <Link class="login" to="login"><span>로그인</span></Link>
                     </div>
                 </JoinWrap>
             </div>
@@ -38,11 +43,13 @@ const MenuList = ({menus}) => {
 }
 
 const MenuWrap = styled.div`
-    position: relative;
+    position: sticky;
+    top:0;
     z-index:100;
     width: 100%;
     background-color: #fff;
     padding: 20px 40px;
+    border-bottom: 1px solid #eee;
 
     & .menuBox {
         width: auto;
@@ -76,6 +83,7 @@ const MenuListUl = styled.ul`
 
     & li {
         color: inherit;
+        list-style: none;
     }
 `
 
@@ -99,6 +107,7 @@ const JoinWrap = styled.div`
             }
 
             transition: .2s ease-in-out;
+            text-decoration: none;
         }
 
         & > a + a:before {
@@ -124,6 +133,6 @@ const JoinWrap = styled.div`
     }
 `
 
-export default MenuList;
+export default Gnb;
 
 
