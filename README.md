@@ -1,16 +1,23 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+e-book 도서 대여 및 구매 시스템 사이트 프로젝트 입니다.
 
-Currently, two official plugins are available:
+**진행부분**
+- pc 웹
+- 메인페이지 UI 컴포넌트 구성
+- Gnb 메뉴 링크 ui
+  footer ui
+- 카드타입1 - 검색 ui , 베스트도서
+- 카드타입2 - 결재방법
+- 카드타입3 - 대여목록 대시보드
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**진행예정**
+- 회원가입
+- 로그인
+- 도서 목록 - 상세페이지
+- 장바구니
+- 모바일 반응형
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Tech
+React, Router, style-components, 
+props, state, 이벤트연결, 리스트 랜더링, 컴포넌트 구조
