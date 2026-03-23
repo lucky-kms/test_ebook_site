@@ -25,3 +25,17 @@
     font-weight: 500;
     color: #333;
 }
+
+@media screen and (max-width: 1279px ) {
+    
+}
+@media screen and (max-width: 10723px ) {
+    .card_box {
+        border-radius: 1rem;
+        padding: 2rem;
+    }
+
+}
+@media screen and (max-width: 767px ) {
+
+}

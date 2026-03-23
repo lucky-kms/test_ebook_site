@@ -1,6 +1,8 @@
 import React from "react";
 import BookList from "./BookList";
 import ListCss from '../assets/css/List.module.css';
+import styled from "styled-components";
+import { divice } from "@/assets/css/breakPoint";
 
 const BookListInline = ({ books }) => {
 
@@ -15,14 +17,26 @@ const BookListInline = ({ books }) => {
     return (
         <>
             <div>
-                <ul style={{display:"flex", alignItems: "center", justifyContent:"space-between"}}>
+                <InlineBookUl>
                     {books.map(book => (
                         <BookList key={book.id} book={book} handleRent={() => (handleRent(book.id, book.title))} handleBuy={() => handleBuy(book.id, book.title)}/>
                     ))}
-                </ul>
+                </InlineBookUl>
             </div>
         </>
     )
 }
 
+const InlineBookUl = styled.ul`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+
+    @media screen and (${divice.mobile}) {
+        flex-wrap: wrap;
+    }
+`
+
 export default BookListInline;
+

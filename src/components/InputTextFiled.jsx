@@ -38,17 +38,17 @@ const InputBox = styled.div`
 
     & > button {
         width: auto;
-        min-width: 80px;
-        height: 32px;
+        min-width: 8rem;
+        height: 3.2rem;
         background-color: #111;
         color: #fff;
         line-height: .925;
-        font-size: 14px;
+        font-size: 1.4rem;
         font-weight: 700;
     }
 
     & > input ~ button {
-        margin-left: 10px;
+        margin-left: 1rem;
     }
 `
 

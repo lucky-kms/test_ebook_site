@@ -21,14 +21,14 @@ const Menu = ({menu, scrollToSection, active}) => {
 }
 
 const MenuButton = styled.button`
-    font-size: 20px;
+    font-size: 2rem;
     font-weight:700;
-    color: ${({ active }) => (active? "#777" : "inherit")};
+    color: ${({ active }) => (active? "#fff" : "inherit")};
     cursor: pointer;
-    background-color: ${({active}) => (active ? "#ededed" : "transparent")};;
+    background-color: ${({active}) => (active ? "#111" : "transparent")};;
     border: 0;
-    padding: 10px 20px;
-    border-radius: 25px;
+    padding: 1rem 2rem;
+    border-radius: 2.5rem;
     position: relative;
     transition: .35s ease-in-out;
 
@@ -57,7 +57,7 @@ const MenuButton = styled.button`
 `
 
 const NavLinkStyled = styled(NavLink)`
-    font-size: 20px;
+    font-size: 2rem;
     font-weight:700;
     color: inherit;
     cursor: pointer;

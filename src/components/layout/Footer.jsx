@@ -6,6 +6,7 @@ import { familyOptions, snsOptions } from "../../datas/selectData";
 // style, images
 import { styled } from "styled-components";
 import logoWhite from "@/assets/images/logo-white.svg";
+import { divice } from "@/assets/css/breakPoint";
 
 export default function Footer() {
 
@@ -25,14 +26,15 @@ export default function Footer() {
     return (
         <StyledFooter>
             <div className="inner">
-                <div className="footer_left">
+                <div className="footer_top">
                     <img src={logoWhite} className="footer_logo" />
-
+                </div>
+                <div className="footer_left">
                     {/* <div className="footer_menu">
 
                     </div> */}
 
-                    <p>
+                    <p className="footer_address">
                         <span>주)교보문고 서울특별시 종로구 종로1</span>
                         <span>대표이사 : 허정도</span>
                         <span>사업자등록번호 : 102-81-11670</span>
@@ -78,11 +80,11 @@ export default function Footer() {
 const StyledFooter = styled.footer`
     background-color: var(--bg-b1);
     color: var(--text-w1);
-    padding: 50px;
-    min-height: 500px;
+    padding: 5rem;
+    min-height: 50rem;
 
     & .inner {
-        max-width: 1280px;
+        max-width: 128rem;
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
@@ -90,25 +92,58 @@ const StyledFooter = styled.footer`
         margin: 0 auto;
     }
 
+    & .footer_top {
+        width: 100%;
+    }
+
     & .footer_logo {
-        width: 200px;
+        width: 20rem;
+        @media screen and (${divice.tablet}) {
+            width: 15rem;
+        }
     }
 
     & .footer_left {
         max-width: 60%;
+
+        @media screen and (${divice.tablet}) {
+            max-width: 100%;
+
+            .footer_address {
+                span {
+                    display: block;
+                }
+                font-size:1.4rem;
+                margin-bottom: 2rem;
+            }
+        }
     }
 
     & .footer_right {
         min-width: 40%;
+        margin-right: auto;
 
         & .right_inner {
             display: flex;
             align-items: center;
-            justify-content: flex-state;
+            justify-content: flex-end;
             
             & * + * {
-                margin-left: 10px;
+                margin-left: 1rem;
             }
+
+            @media screen and (${divice.tablet}) {
+                display: flex;
+                flex-wrap: wrap;
+
+                & * + * {
+                    margin-left: 0;
+                }
+            }
+        }
+
+        @media screen and (${divice.tablet}) {
+            width: 100%;
         }
     }
 
@@ -116,14 +151,25 @@ const StyledFooter = styled.footer`
         width: 100%;
 
         & p {
-            padding: 20px 0;
+            padding: 2rem 0;
         }
+    }
+
+    @media screen and (${divice.tablet}) {
+        padding: 2rem 3.5rem;
     }
 `;
 
 const SelectWrap = styled.div`
     & select {
-        width: 200px;
-        height: 32px;
+        width: 20rem;
+        height: 3.2rem;
+        @media screen and (${divice.tablet}) {
+            width: 100%;
+        }
+    }
+
+    @media screen and (${divice.tablet}) {
+        width: 100%;
     }
 `

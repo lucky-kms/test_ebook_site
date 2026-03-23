@@ -14,6 +14,7 @@ import Select from "../components/Select";
 // 이미지, 속성, 스타일
 import styled from 'styled-components';
 import cardImg from '../assets/images/home-issuing2.svg';
+import { divice } from '../assets/css/breakpoint';
 
 // 페이지
 import Pay from '../pages/Pay';
@@ -165,7 +166,7 @@ const Main = () => {
                             </CardFlex>
 
                 {/* 도서 공간 , 버튼 기능 - 좋아요, 구독, 북마크, 인기아이템 */}
-                            <CardFlex>
+                            <CardFlex className="section01Card">
                                 {/* card1 */}
                                 <CardBox text="신규도서 & 검색"> 
                                     <InputTextFiled
@@ -177,7 +178,7 @@ const Main = () => {
                                         btnText={"검색"} 
                                     />
 
-                                    <p><span style={{display:"inline-block", fontSize:"16px", fontWeight:"700", paddingTop: "10px"}}> 입력값 확인 :</span>{` ${value}`}</p>
+                                    <p><span style={{display:"inline-block", fontSize:"1.6rem", fontWeight:"700", paddingTop: "1rem"}}> 입력값 확인 :</span>{` ${value}`}</p>
 
                                     <div>
                                         <br/>
@@ -224,16 +225,16 @@ const Main = () => {
                 </Section> 
 
                 <Section id="new_book" ref={newRef}
-                    style={{height:"700px", }}>
+                    style={{height:"70rem", }}>
                     <TitleH2>신상품</TitleH2>
-                    <p style={{color: "#111", minHeight: "100px", paddingBottom:"50px", fontSize: "26px",}}>{/* 스아이프 연결 , 협찬사 로고 흐르는 텍스트 */ }</p>
+                    <p style={{color: "#111", minHeight: "10rem", paddingBottom:"5rem", fontSize: "2.6rem",}}>{/* 스아이프 연결 , 협찬사 로고 흐르는 텍스트 */ }</p>
                 </Section>
 
                 <Section id="event_book" ref={eventRef} 
-                    style={{height:"700px", }}>
+                    style={{height:"70rem", }}>
                     <TitleH2>이벤트</TitleH2>
 
-                    <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
+                    {/* <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
                             <Select
                                 options={categoryOptions}
                                 value={category}
@@ -251,17 +252,17 @@ const Main = () => {
                         <span style={{ marginLeft: 10, opacity: 0.7}}>
                             state : {JSON.stringify(query)}
                         </span>
-                    </div>
+                    </div> */}
                         
                 </Section>
 
                 <Section id="pay" ref={payRef} 
-                    style={{height:"700px",}}>
+                    style={{height:"70rem",}}>
                     <TitleH2>Pay</TitleH2>
                 </Section>
 
                 <Section id="straight_funding" ref={fundingRef}
-                    style={{height:"700px", }}>
+                    style={{height:"70rem", }}>
                     <TitleH2>바로펀딩</TitleH2>
                 </Section>
             </Wrap>
@@ -277,12 +278,17 @@ const Wrap = styled.div`
 `
 
 const TitleH2 = styled.h2`
-    font-size: 32px;
+    font-size: 3.2rem;
     font-weight: 700;
     color: #111;
     line-height:1.2;
-    padding: 150px 20px 50px;
+    padding: 15rem 2rem 5rem;
     text-align: center;
+
+    @media screen and (${divice.tablet}) {
+        font-size: 2.2rem;
+        padding: 4rem 2rem 3rem;
+    }
 `;
 
 const Section = styled.section`
@@ -308,24 +314,33 @@ const CardFlex = styled.div`
     justify-content: center;
     
     & > div { 
-        margin: 10px;
-        min-height:468.97px;
+        margin: 1rem;
+        min-height:46.897rem;
         max-height:auto;
     }
 
     & > button + button {
-        margin:0 20px;
+        margin:0 2rem;
     }
 
     & ~ & {
-        margin-top: 100px ;
+        margin-top: 10rem ;
+        @media screen and (${divice.tablet}) {
+            margin-top: 4rem ;
+        }
+    }
+
+    &.section01Card {
+        @media screen and (${divice.tablet}) {
+            flex-wrap: wrap;
+        }
     }
 `;
 
 
 const BgWrap = styled.div`
     width:100%;
-    height: 1400px;
+    height: 140rem;
     position: absolute;
     top:0;
     left: 0;
@@ -333,36 +348,36 @@ const BgWrap = styled.div`
     z-index: 1;
 
     & .bgFront {
-        height: 800px;
-        width: 800px;
+        height: 80rem;
+        width: 80rem;
         position: absolute;
         border-radius: 50%;
-        filter: blur(120px);
+        filter: blur(12rem);
     }
 
     & .bgY {
         background: rgba(255, 255, 37, .8);
-        top: 300px;
-        left: -200px;
+        top: 30rem;
+        left: -20rem;
     }
     & .bgG {
         background: rgba(0, 255, 240, .8);
-        height: 800px;
-        width: 800px;
-        top: 300px;
-        right: -200px;
+        height: 80rem;
+        width: 80rem;
+        top: 30rem;
+        right: -20rem;
         position: absolute;
         border-radius: 50%;
-        filter: blur(120px);
+        filter: blur(12rem);
     }
     & .bgB {
         height: 800px;
         width: 800px;
         position: absolute;
         border-radius: 50%;
-        filter: blur(120px);
+        filter: blur(12rem);
         background: #55f5a3;
-        top: 400px;
+        top: 40rem;
         left: 50%;
         transform: translateX(-50%);
     }

@@ -12,12 +12,12 @@ const BookList = ({ book, handleRent, handleBuy }) => {
             <Link to={`/book_detail/${id}`}
                 style={{
                     display: "block",
-                    padding: 12,
+                    padding: "1.2rem",
                     textDecoration: "none",
                     color: "inherit",
                 }}
             >
-                <span style={{display: "inline-block",width: "90px", height: "130px"}}>
+                <span style={{display: "inline-block",width: "9rem", height: "13rem"}}>
                     <img 
                         src={getCoverUrl(coverSrc)} 
                         alt={coverAlt}
@@ -47,20 +47,20 @@ const BtnWrap = styled.div`
 `
 
 const BtnRent = styled.button`
-    width: 50px;
-    height: 32px;
+    width: 5rem;
+    height: 3.2rem;
     line-height: 0.925;
-    font-size: 14px;
+    font-size: 1.4rem;
     background-color: blue;
     margin: 0;
     padding : 0;
 `
 
 const BtnBuy = styled.button`
-    width: 50px;
-    height: 32px;
+    width: 5rem;
+    height: 3.2rem;
     line-height: 0.925;
-    font-size: 14px;
+    font-size: 1.4rem;
     background-color: green;
     margin: 0;
     padding : 0;
