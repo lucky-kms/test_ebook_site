@@ -3,9 +3,13 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Menu from "./Menu";
 import { divice } from '../../assets/css/breakpoint';
+import { useAuth } from "../../hooks/useAuth";
 
 
 const Gnb = ({menus, activeTarget, scrollToSection}) => {
+
+    const { logout, isAuthenticated, user } = useAuth();
+
 
     return (
         <MenuWrap>
@@ -35,7 +39,19 @@ const Gnb = ({menus, activeTarget, scrollToSection}) => {
                 <JoinWrap>
                     <div className="inner">
                         <Link className="memberjoin" to="join"><span>회원가입</span></Link>
-                        <Link className="login" to="login"><span>로그인</span></Link>
+                        <Link className="login" to="login">
+                            {
+                                isAuthenticated ? (
+                                    <>
+                                        {/* <span>{user.username} 님</span> */}
+                                        <button tpye="button" className="btnLogout" onClick={logout}>로그아웃</button>
+                                    </>
+                                ) : (
+                                    <span>로그인</span>
+                                )
+                            }
+                            
+                        </Link>
                     </div>
                 </JoinWrap>
             </div>
@@ -102,7 +118,7 @@ const MenuListUl = styled.ul`
 `
 
 const JoinWrap = styled.div`
-    min-width: 12.5rem;
+    min-width: 15.5rem;
 
     & .inner {
         display: flex;
@@ -129,7 +145,7 @@ const JoinWrap = styled.div`
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-3.1rem ,-50%);
+            transform: translate(-4.5rem ,-50%);
             width:1px;
             height: 15px;
             background-color: #999fac;
@@ -143,6 +159,13 @@ const JoinWrap = styled.div`
         & .login {
             font-size: 1.6rem;
             color: #999fac;
+        }
+
+        & .btnLogout {
+            font-size: 1.2rem;
+            background-color: #111;
+            color: #fff;
+            font-weight: 700;
         }
     }
 `

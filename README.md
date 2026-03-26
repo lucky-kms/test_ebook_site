@@ -3,15 +3,15 @@
 e-book 도서 대여 및 구매 시스템 사이트 프로젝트 입니다.
 
 **진행부분**
-- pc 웹
-- 메인페이지 디자인, UI 컴포넌트 구성
-- Gnb 메뉴 링크 ui,
-  footer ui
+- react + vite + RestApi
+- 모바일, 태블릿, PC 적응형(반응형) style
+- 메인페이지, UI 컴포넌트 구조
+- Gnb 메뉴, 링크 컴포넌트, footer 컴포넌트
 - 카드타입1 - 검색 ui , 베스트도서
 - 카드타입2 - 결재방법
 - 카드타입3 - 대여목록 대시보드 - 컬럼 클릭시 sort : Asc, Desc,
-- 메뉴 스크롤 활성화, 클릭시 이동 UI
-- 모바일, 태블릿, PC 적응형(반응형) style
+- 메뉴 스크롤 Section 활성화, 클릭시 이동 UI
+- module-css , styled-components, assets(image, js, css) 구조
 
 **진행예정**
 - 회원가입 : 폼 컴포넌트, 가입

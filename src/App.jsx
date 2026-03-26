@@ -13,6 +13,7 @@ import './assets/css/common.css';
 import MainComponent from './pages/MainComponent';
 import Pay from './pages/Pay';
 import AppLayout from './layouts/AppLayout';
+import Login from './pages/Login';
 
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
         <Route element={<AppLayout />}>
           <Route path="/" element={<MainComponent />}/>
           <Route path="/pay" element={<Pay />}/>
+          <Route path="/login" element={<Login />}/>
         </Route>
       </Routes>
     
