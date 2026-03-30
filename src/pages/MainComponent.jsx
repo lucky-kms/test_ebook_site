@@ -249,7 +249,7 @@ const Main = () => {
 
                 <Section id="event_book" ref={eventRef}>
                     <TitleH2>이벤트</TitleH2>
-
+                    {/* 이벤트 컴포넌트 new */}
                     <div className="inner">
                         <BestBookSlider 
                             books={eventBook}
@@ -292,7 +292,7 @@ const Main = () => {
 
                 <Section id="straight_funding" ref={fundingRef}>
                     <TitleH2>바로펀딩</TitleH2>
-
+                    {/* 펀딩 탭 컴포넌트 new */}
                     <div className="inner">
                         <BestBookSlider 
                             books={newBook}
