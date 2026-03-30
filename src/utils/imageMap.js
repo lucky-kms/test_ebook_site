@@ -1,4 +1,4 @@
-const coverModules = import.meta.glob("/src/assets/images/book_img/*.{png,jpg,jpeg,webp,svg}", {
+const coverModules = import.meta.glob("/src/assets/images/**/*.{png,jpg,jpeg,webp,svg}", {
     eager: true,
     import: "default",
 });

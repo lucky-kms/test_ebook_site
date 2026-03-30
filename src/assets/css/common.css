@@ -148,3 +148,55 @@ a {
   opacity: 0.6;
   cursor: not-allowed;
 }
+
+/* swiper */
+
+.flowSwiperWrap {
+  & .swiper-wrapper {
+    transition-timing-function: linear;
+    cursor: pointer;
+  }
+}
+
+.navSwiperWrap {
+
+  & .swiper-button-prev {
+    position: absolute;
+    top: 39%;
+    left: 1.2rem;
+    width: 5rem;
+    height: 5rem;
+    background-color: #fff;
+    border: 1px solid #111;
+    border-radius: 50%;
+    transform: rotate(-180deg);
+    z-index: 100;
+    cursor: pointer;
+
+    & * {
+      position: absolute;
+      top: 13px;
+      left: 39%;
+    }
+  }
+
+  & .swiper-button-next {
+    position: absolute;
+    top: 39%;
+    right: 1.2rem;
+    width: 5rem;
+    height: 5rem;
+    background-color: #fff;
+    border: 1px solid #111;
+    border-radius: 50%;
+    z-index: 100;
+    cursor: pointer;
+
+     & * {
+      position: absolute;
+      top: 13px;
+      right: 39%;
+    }
+  }
+}
+

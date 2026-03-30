@@ -3,7 +3,7 @@
 // import book02 from "@/assets/images/book_img/book_02.webp";
 // import book03 from "@/assets/images/book_img/book_03.webp";
 
-export const books =[
+export const books = [
     {
         id: "1",
         title: "공감형AI 시대가 온다",

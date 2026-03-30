@@ -17,8 +17,8 @@ export const menus =[
     },
     {
         id: "4",
-        menuname: "pay",
-        scrollTarget: "pay"
+        menuname: "pick",
+        scrollTarget: "pick"
     },
     {
         id: "5",

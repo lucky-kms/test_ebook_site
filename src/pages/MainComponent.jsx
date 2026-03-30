@@ -11,16 +11,20 @@ import InputTextFiled from '../components/InputTextFiled';
 import MenuList from "../components/layout/Gnb";
 import Select from "../components/Select";
 // import MainComponent from '../pages/MainComponent';
+import BestBookSlider, { BookFlowSlider } from "./BestBookSlider";
+
 // 이미지, 속성, 스타일
 import styled from 'styled-components';
 import cardImg from '../assets/images/home-issuing2.svg';
 import { divice } from '../assets/css/breakpoint';
+import { defaultSliderOptions, flowSliderOptions } from "@/components/slider/sliderOptions";
 
 // 페이지
 import Pay from '../pages/Pay';
 
 // 데이타, json, js
 import { books } from "../datas/bestBooks";
+import { newBook, eventBook, flowLogo } from "../datas/bookEventData";
 
 
 
@@ -184,7 +188,7 @@ const Main = () => {
                                         <br/>
                                         <br/>
                                         <br/>
-                                        <h3>이 달의 추천도서 BEST 3</h3>
+                                        <h3 style={{fontSize:"1.6rem"}}>이 달의 추천도서 BEST 3</h3>
                                         <BookListInline books={books} />
                                         
                                         {/* <p>1번 - 대여, 구매 ( 클릭시 대여, 구매 팝업 띄우기)</p>
@@ -195,7 +199,7 @@ const Main = () => {
                                 
                                 {/* card2 */}
                                 <CardBox styleCustom={styleCustom} text="구매 & 결재" subText="상세한 결제 정보, 빠른 정산, 그리고 완벽한 투명성을 통해 결제를 수락하세요." >
-                                    <Link to="/pay" style={{display:"inline-block"}}><img src={cardImg} /></Link>
+                                    <Link to="/pick" style={{display:"inline-block"}}><img src={cardImg} /></Link>
                                 </CardBox>
 
                                 {/* card3 */}
@@ -222,17 +226,36 @@ const Main = () => {
                             <div className="bgB"></div>
                         </BgWrap>
                     </div>
+
+                    <div className="swiperPosition">
+                        <BookFlowSlider 
+                            books={flowLogo}
+                            options={flowSliderOptions}
+                            flow={true}
+                        />
+                    </div>
                 </Section> 
 
-                <Section id="new_book" ref={newRef}
-                    style={{height:"70rem", }}>
-                    <TitleH2>신상품</TitleH2>
-                    <p style={{color: "#111", minHeight: "10rem", paddingBottom:"5rem", fontSize: "2.6rem",}}>{/* 스아이프 연결 , 협찬사 로고 흐르는 텍스트 */ }</p>
+                <Section id="new_book" ref={newRef}>
+                    <TitleH2 style={{position:"relative", zIndex:"1"}}>신상품</TitleH2>
+                    {/* 스아이프 연결 , 협찬사 로고 흐르는 텍스트 */ }
+                    <div className="inner">
+                        <BestBookSlider 
+                            books={newBook}
+                            options={defaultSliderOptions}
+                        />
+                    </div>
                 </Section>
 
-                <Section id="event_book" ref={eventRef} 
-                    style={{height:"70rem", }}>
+                <Section id="event_book" ref={eventRef}>
                     <TitleH2>이벤트</TitleH2>
+
+                    <div className="inner">
+                        <BestBookSlider 
+                            books={eventBook}
+                            options={defaultSliderOptions}
+                        />
+                    </div>
 
                     {/* <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
                             <Select
@@ -256,14 +279,26 @@ const Main = () => {
                         
                 </Section>
 
-                <Section id="pay" ref={payRef} 
-                    style={{height:"70rem",}}>
-                    <TitleH2>Pay</TitleH2>
+                <Section id="pick" ref={payRef}>
+                    <TitleH2>MD Pick</TitleH2>
+
+                    <div className="inner">
+                        <BestBookSlider 
+                            books={eventBook}
+                            options={defaultSliderOptions}
+                        />
+                    </div>
                 </Section>
 
-                <Section id="straight_funding" ref={fundingRef}
-                    style={{height:"70rem", }}>
+                <Section id="straight_funding" ref={fundingRef}>
                     <TitleH2>바로펀딩</TitleH2>
+
+                    <div className="inner">
+                        <BestBookSlider 
+                            books={newBook}
+                            options={defaultSliderOptions}
+                        />
+                    </div>
                 </Section>
             </Wrap>
         </>
@@ -294,11 +329,26 @@ const TitleH2 = styled.h2`
 const Section = styled.section`
     width: 100%;
     height: 100%;
+    min-height: 70rem;
     background-color: #fff;
     
     & .inner {
         max-width: 1280px;
         margin: 0 auto;
+    }
+
+    & .swiperPosition {
+        position: relative;
+        z-index: 10;
+    }
+
+    @media screen and (${divice.mobile}) {
+        min-height: auto;
+        margin: 10rem 0;
+
+        &:first-of-type {
+            margin:0;
+        }
     }
 `;
 
@@ -342,7 +392,7 @@ const BgWrap = styled.div`
     width:100%;
     height: 140rem;
     position: absolute;
-    top:0;
+    top:-5rem;
     left: 0;
     overflow: hidden;
     z-index: 1;

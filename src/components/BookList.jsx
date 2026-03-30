@@ -51,7 +51,8 @@ const BtnRent = styled.button`
     height: 3.2rem;
     line-height: 0.925;
     font-size: 1.4rem;
-    background-color: blue;
+    color:#fff;
+    background-color: #111;
     margin: 0;
     padding : 0;
 `
@@ -61,7 +62,8 @@ const BtnBuy = styled.button`
     height: 3.2rem;
     line-height: 0.925;
     font-size: 1.4rem;
-    background-color: green;
+    color:#fff;
+    background-color: #111;
     margin: 0;
     padding : 0;
 `
