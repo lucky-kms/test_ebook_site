@@ -325,7 +325,7 @@ const Section = styled.section`
     min-height: 70rem;
     background-color: #fff;
     
-    & .inner {
+    & .inner { 
         max-width: 1280px;
         margin: 0 auto;
     }
