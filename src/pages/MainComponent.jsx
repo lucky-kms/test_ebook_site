@@ -17,7 +17,6 @@ import BestBookSlider, { BookFlowSlider } from "./BestBookSlider";
 import styled from 'styled-components';
 import cardImg from '../assets/images/home-issuing2.svg';
 import { divice } from '../assets/css/breakpoint';
-import { defaultSliderOptions, flowSliderOptions } from "@/components/slider/sliderOptions";
 
 // 페이지
 import Pay from '../pages/Pay';
@@ -25,6 +24,7 @@ import Pay from '../pages/Pay';
 // 데이타, json, js
 import { books } from "../datas/bestBooks";
 import { newBook, eventBook, flowLogo } from "../datas/bookEventData";
+import Productpage from "./Productpage";
 
 
 
@@ -230,7 +230,6 @@ const Main = () => {
                     <div className="swiperPosition">
                         <BookFlowSlider 
                             books={flowLogo}
-                            options={flowSliderOptions}
                             flow={true}
                         />
                     </div>
@@ -242,19 +241,15 @@ const Main = () => {
                     <div className="inner">
                         <BestBookSlider 
                             books={newBook}
-                            options={defaultSliderOptions}
                         />
                     </div>
                 </Section>
 
-                <Section id="event_book" ref={eventRef}>
+                <Section id="event_book" ref={eventRef} className="sectionEvent">
                     <TitleH2>이벤트</TitleH2>
                     {/* 이벤트 컴포넌트 new */}
                     <div className="inner">
-                        <BestBookSlider 
-                            books={eventBook}
-                            options={defaultSliderOptions}
-                        />
+                        <Productpage />
                     </div>
 
                     {/* <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
@@ -285,7 +280,6 @@ const Main = () => {
                     <div className="inner">
                         <BestBookSlider 
                             books={eventBook}
-                            options={defaultSliderOptions}
                         />
                     </div>
                 </Section>
@@ -296,7 +290,6 @@ const Main = () => {
                     <div className="inner">
                         <BestBookSlider 
                             books={newBook}
-                            options={defaultSliderOptions}
                         />
                     </div>
                 </Section>
@@ -342,14 +335,27 @@ const Section = styled.section`
         z-index: 10;
     }
 
+    &.sectionEvent {
+        min-height: 70rem;
+        padding:0 0 10rem;
+        background-color: #efefef;
+    }
+
     @media screen and (${divice.mobile}) {
         min-height: auto;
         margin: 10rem 0;
+        min-height: 30rem;
 
         &:first-of-type {
             margin:0;
         }
+
+        &.sectionEvent {
+            min-height: auto;
+            padding:0 0 7rem;
+        }
     }
+    
 `;
 
 const CardFlexCurrent = styled.div`

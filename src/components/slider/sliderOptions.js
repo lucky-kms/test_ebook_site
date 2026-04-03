@@ -1,6 +1,7 @@
 
 import { Autoplay } from "swiper/modules";
 
+// 기본 슬라이더
 export const defaultSliderOptions = {
     slidesPerView: 2,
     spaceBetween: 30,
@@ -21,7 +22,7 @@ export const mobileSliderOptions = {
     spceBetween: 10,
 }
 
-// flow slider
+// 흐르는 슬라이더
 export const flowSliderOptions = {
     modules: [Autoplay],
     slidesPerView: 3,

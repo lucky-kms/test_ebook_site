@@ -10,14 +10,16 @@ React Router 라우팅 구조를 적용했습니다.
 
 **진행부분**
 - react + vite + RestApi
+- axios, swiper 라이브러리
+- module-css , styled-components, assets(image, js, css) 구조
 - 모바일, 태블릿, PC 적응형(반응형) style
 - 로그인 : 정상로그인, 로그인 전역관리, 에러 
 - 메인페이지, UI 컴포넌트 구조
 - Gnb 메뉴, 링크 컴포넌트, footer 컴포넌트
 - 카드타입1 - 검색 ui , 베스트도서 , 대여목록 대시보드 - 컬럼 클릭시 sort : Asc, Desc,
 - 메뉴 스크롤 Section 활성화, 클릭시 이동 인터랙션 UI/UX
-- module-css , styled-components, assets(image, js, css) 구조
-- axios, swiper 라이브러리
+- 탭 컴포넌트
+
 
 **진행예정**
 - 회원가입 : 폼 컴포넌트, 가입
@@ -26,7 +28,7 @@ React Router 라우팅 구조를 적용했습니다.
 - 장바구니
 - 로딩
 - 로그인 데이타
-- 탭 컴포넌트
+
 
 **이슈**
 새로고침 시 인증 상태 처리

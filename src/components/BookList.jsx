@@ -13,6 +13,7 @@ const BookList = ({ book, handleRent, handleBuy }) => {
                 style={{
                     display: "block",
                     padding: "1.2rem",
+                    minHeight: "21.2rem",
                     textDecoration: "none",
                     color: "inherit",
                 }}
